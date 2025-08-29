@@ -1,14 +1,10 @@
 import { useState, useEffect } from 'react';
-
 const Hero = () => {
   const [isVisible, setIsVisible] = useState(false);
-
   useEffect(() => {
     setIsVisible(true);
   }, []);
-
-  return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-background via-background to-primary/5">
+  return <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-background via-background to-primary/5">
       {/* Background Effects */}
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--primary)_0%,_transparent_50%)] opacity-10" />
       <div className="absolute top-20 left-20 w-72 h-72 bg-accent/20 rounded-full blur-3xl animate-pulse" />
@@ -41,22 +37,20 @@ const Hero = () => {
           {/* Stats */}
           <div className={`grid grid-cols-3 gap-8 mt-16 max-w-2xl mx-auto transition-all duration-1000 delay-500 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
             <div className="text-center">
-              <div className="text-3xl font-bold text-gradient">95%</div>
+              <div className="text-3xl font-bold text-gradient">40%</div>
               <div className="text-sm text-muted-foreground">Taxa de Resposta</div>
             </div>
             <div className="text-center">
-              <div className="text-3xl font-bold text-gradient">300%</div>
-              <div className="text-sm text-muted-foreground">ROI Médio</div>
+              <div className="text-3xl font-bold text-gradient">Sem Risco</div>
+              <div className="text-sm text-muted-foreground">Performance-based</div>
             </div>
             <div className="text-center">
-              <div className="text-3xl font-bold text-gradient">24h</div>
+              <div className="text-3xl font-bold text-gradient">1 Semana</div>
               <div className="text-sm text-muted-foreground">Implementação</div>
             </div>
           </div>
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default Hero;
