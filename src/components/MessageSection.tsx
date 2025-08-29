@@ -43,14 +43,14 @@ const MessageSection = () => {
   }, [sectionVisible]);
 
   return (
-    <section id="messages-section" className="py-20 bg-gradient-to-b from-background to-secondary/20">
+    <section id="demonstracao" className="py-20 bg-gradient-to-b from-primary/5 via-background/50 to-background">
       <div className="container mx-auto px-6">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold mb-6">
-            Veja a Nossa <span className="text-gradient">IA em Ação</span>
+            Veja a nossa <span className="text-gradient">IA em Ação</span>
           </h2>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            Assim é como a nossa IA Prince Charming desperta leads adormecidos e os transforma em vendas reais
+            Assim é como a nossa IA Frontera desperta leads adormecidos e os transforma em vendas reais
           </p>
         </div>
 

@@ -39,14 +39,14 @@ const caseStudies = [
 
 const CaseStudies = () => {
   return (
-    <section className="py-20 bg-gradient-to-b from-secondary/20 to-background">
+    <section id="casos-estudo" className="py-16 bg-gradient-to-b from-background to-primary/5">
       <div className="container mx-auto px-6">
-        <div className="text-center mb-16">
+        <div className="text-center mb-12">
           <h2 className="text-4xl md:text-5xl font-bold mb-6">
             Casos de <span className="text-gradient">Sucesso Reais</span>
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            Empresas que transformaram leads esquecidos em receita significativa com a nossa IA Prince Charming
+            Empresas que transformaram leads esquecidos em receita significativa com a nossa IA Frontera
           </p>
         </div>
 

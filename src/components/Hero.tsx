@@ -4,7 +4,7 @@ const Hero = () => {
   useEffect(() => {
     setIsVisible(true);
   }, []);
-  return <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-background via-background to-primary/5">
+  return <section id="hero" className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-background via-background to-primary/5 pt-16">
       {/* Background Effects */}
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--primary)_0%,_transparent_50%)] opacity-10" />
       <div className="absolute top-20 left-20 w-72 h-72 bg-accent/20 rounded-full blur-3xl animate-pulse" />
@@ -26,7 +26,13 @@ const Hero = () => {
           
           {/* CTA Button */}
           <div className="space-y-4">
-            <button className="btn-hero">
+            <button 
+              onClick={() => {
+                const element = document.getElementById('contacto');
+                if (element) element.scrollIntoView({ behavior: 'smooth' });
+              }}
+              className="btn-hero"
+            >
               Agendar Demonstração
             </button>
             <p className="text-sm text-muted-foreground">
