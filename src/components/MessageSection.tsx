@@ -26,7 +26,7 @@ const MessageSection = () => {
       { threshold: 0.3 }
     );
 
-    const section = document.getElementById('messages-section');
+    const section = document.getElementById('demonstracao');
     if (section) observer.observe(section);
 
     return () => observer.disconnect();
