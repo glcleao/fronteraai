@@ -85,7 +85,7 @@ const TermsOfPrivacy = () => {
             </section>
 
             <section>
-              <h2 className="text-2xl font-semibold mb-4 text-foreground">9. Contato</h2>
+              <h2 className="text-2xl font-semibold mb-4 text-foreground">9. Contacto</h2>
               <p className="text-muted-foreground leading-relaxed">
                 Se você tiver dúvidas sobre esta política de privacidade ou sobre como tratamos suas informações pessoais, entre em contato conosco através dos canais disponibilizados em nosso site ou agende uma demonstração para esclarecimentos adicionais.
               </p>
