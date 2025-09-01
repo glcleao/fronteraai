@@ -44,12 +44,14 @@ const Navigation = () => {
             >
               Contacto
             </button>
-            <button 
-              onClick={() => scrollToSection('contacto')}
-              className="btn-hero text-sm px-4 py-2"
+            <a 
+              href="https://calendly.com/frontera_ai/introduction-technology-demo"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn-hero text-sm px-4 py-2 inline-block"
             >
               Agendar Demonstração Gratuita
-            </button>
+            </a>
           </div>
 
           {/* Mobile Menu Button */}
@@ -90,12 +92,14 @@ const Navigation = () => {
             >
               Contacto
             </button>
-            <button 
-              onClick={() => scrollToSection('contacto')}
-              className="w-full btn-hero text-sm mt-4"
+            <a 
+              href="https://calendly.com/frontera_ai/introduction-technology-demo"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-full btn-hero text-sm mt-4 inline-block text-center"
             >
               Agendar Demonstração Gratuita
-            </button>
+            </a>
           </div>
         )}
       </div>

@@ -24,14 +24,14 @@ const Hero = () => {
           
           {/* CTA Button */}
           <div className="space-y-4">
-            <button onClick={() => {
-            const element = document.getElementById('contacto');
-            if (element) element.scrollIntoView({
-              behavior: 'smooth'
-            });
-          }} className="btn-hero">
+            <a 
+              href="https://calendly.com/frontera_ai/introduction-technology-demo"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn-hero inline-block"
+            >
               Agendar Demonstração
-            </button>
+            </a>
             <p className="text-sm text-muted-foreground">Sem compromisso</p>
           </div>
           
