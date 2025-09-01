@@ -60,10 +60,10 @@ const ContactForm = () => {
 
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             {/* Left side - Benefits */}
-            <div className="space-y-6">
-              <h3 className="text-2xl font-bold mb-8 text-center">O que inclui a demonstração:</h3>
+            <div className="space-y-8">
+              <h3 className="text-2xl font-bold text-center">O que inclui a demonstração:</h3>
               
-              <div className="grid md:grid-cols-2 gap-6">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-3xl mx-auto">
                 {[{
                 title: "Análise Gratuita dos Seus Leads",
                 desc: "Avaliamos o potencial dos seus leads antigos",
