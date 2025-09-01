@@ -38,7 +38,7 @@ const Hero = () => {
           {/* Stats */}
           <div className={`grid grid-cols-3 gap-8 mt-16 max-w-2xl mx-auto transition-all duration-1000 delay-500 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
             <div className="text-center">
-              <div className="text-3xl font-bold text-gradient">40%</div>
+              <div className="text-3xl font-bold text-gradient">5%</div>
               <div className="text-sm text-muted-foreground py-[5px]">Taxa de Resposta</div>
             </div>
             <div className="text-center">
