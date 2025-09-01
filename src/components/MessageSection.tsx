@@ -106,7 +106,7 @@ const MessageSection = () => {
 
           {/* Results Box */}
           <div className="mt-8 text-center">
-            <div className="card-premium inline-block">
+            <div className="card-premium inline-block py-[10px]">
               <div className="text-sm text-muted-foreground mb-2">Resultado</div>
               <div className="text-lg font-semibold text-gradient">Lead Convertido em Cliente</div>
               <div className="text-sm text-muted-foreground mt-1">Valor: €4,500 • Tempo: 14 minutos</div>
