@@ -60,7 +60,7 @@ const ContactForm = () => {
 
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             {/* Left side - Benefits */}
-            <div className="space-y-8">
+            <div className="space-y-8 text-center lg:text-left">
               <h3 className="text-2xl font-bold text-center">O que inclui a demonstração:</h3>
               
               <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-3xl mx-auto">
