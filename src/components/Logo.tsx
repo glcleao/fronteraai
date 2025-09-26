@@ -1,10 +1,13 @@
+import fronteraLogo from '../assets/frontera-logo.png';
+
 const Logo = () => {
   return (
-    <div className="flex items-center space-x-2">
-      <div className="text-2xl font-bold">
-        <span className="text-foreground">Frontera</span>
-        <span className="text-gradient ml-1">AI</span>
-      </div>
+    <div className="flex items-center">
+      <img 
+        src={fronteraLogo} 
+        alt="Frontera" 
+        className="h-8 w-auto"
+      />
     </div>
   );
 };
