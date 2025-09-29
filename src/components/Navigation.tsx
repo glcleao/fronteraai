@@ -67,9 +67,6 @@ const Navigation = () => {
             <button onClick={() => scrollToSection('demonstracao')} className="block w-full text-left px-4 py-2 text-sm font-medium text-muted-foreground hover:text-foreground transition-colors">
               Demonstração
             </button>
-            <button onClick={() => scrollToSection('casos-estudo')} className="block w-full text-left px-4 py-2 text-sm font-medium text-muted-foreground hover:text-foreground transition-colors">
-              Casos de Estudo
-            </button>
             <button onClick={() => scrollToSection('contacto')} className="block w-full text-left px-4 py-2 text-sm font-medium text-muted-foreground hover:text-foreground transition-colors">
               Contacto
             </button>

@@ -1,52 +1,6 @@
-import { useState } from 'react';
-import { useToast } from '@/hooks/use-toast';
 const ContactForm = () => {
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    company: '',
-    phone: '',
-    message: ''
-  });
-  const [isSubmitting, setIsSubmitting] = useState(false);
-  const {
-    toast
-  } = useToast();
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    setIsSubmitting(true);
-    try {
-      // Simulate form submission - in a real app, this would send to your backend
-      // The email glcleao@gmail.com would be handled server-side for security
-      await new Promise(resolve => setTimeout(resolve, 1000));
-      toast({
-        title: "Pedido Enviado!",
-        description: "Entraremos em contacto consigo em breve para agendar a demonstração."
-      });
-      setFormData({
-        name: '',
-        email: '',
-        company: '',
-        phone: '',
-        message: ''
-      });
-    } catch (error) {
-      toast({
-        title: "Erro",
-        description: "Houve um problema ao enviar o seu pedido. Tente novamente.",
-        variant: "destructive"
-      });
-    } finally {
-      setIsSubmitting(false);
-    }
-  };
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    setFormData(prev => ({
-      ...prev,
-      [e.target.name]: e.target.value
-    }));
-  };
-  return <section id="contacto" className="py-20 bg-gradient-to-b from-background to-primary/5">
+  return (
+    <section id="contacto" className="py-20 bg-gradient-to-b from-background to-primary/5">
       <div className="container mx-auto px-6">
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-16">
@@ -58,13 +12,11 @@ const ContactForm = () => {
             </p>
           </div>
 
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
-            {/* Left side - Benefits */}
-            <div className="space-y-8 text-center lg:text-left">
-              <h3 className="text-2xl font-bold text-center">O que inclui a demonstração:</h3>
-              
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-3xl mx-auto">
-                {[{
+          <div className="max-w-4xl mx-auto text-center">
+            <h3 className="text-2xl font-bold mb-12">O que inclui a demonstração:</h3>
+            
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-3xl mx-auto mb-12">
+              {[{
                 title: "Análise Gratuita dos Seus Leads",
                 desc: "Avaliamos o potencial dos seus leads antigos",
                 icon: <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -88,126 +40,32 @@ const ContactForm = () => {
                 icon: <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                       </svg>
-              }].map((benefit, index) => <div key={index} className="flex items-start space-x-4 p-4 rounded-lg hover:bg-primary/5 transition-colors">
-                    <div className="w-12 h-12 rounded-lg bg-gradient-to-r from-primary to-accent flex items-center justify-center flex-shrink-0 text-white">
-                      {benefit.icon}
-                    </div>
-                    <div>
-                      <h4 className="font-semibold text-foreground mb-1">{benefit.title}</h4>
-                      <p className="text-muted-foreground text-sm">{benefit.desc}</p>
-                    </div>
-                  </div>)}
-              </div>
+              }].map((benefit, index) => (
+                <div key={index} className="flex items-start space-x-4 p-4 rounded-lg hover:bg-primary/5 transition-colors">
+                  <div className="w-12 h-12 rounded-lg bg-gradient-to-r from-primary to-accent flex items-center justify-center flex-shrink-0 text-white">
+                    {benefit.icon}
+                  </div>
+                  <div>
+                    <h4 className="font-semibold text-foreground mb-1">{benefit.title}</h4>
+                    <p className="text-muted-foreground text-sm">{benefit.desc}</p>
+                  </div>
+                </div>
+              ))}
             </div>
 
-            {/* Right side - Form */}
-            <div className="bg-card/50 backdrop-blur-sm rounded-2xl p-8 border border-border/50 shadow-lg">
-              <form onSubmit={handleSubmit} className="space-y-6">
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                  <div>
-                    <label htmlFor="name" className="block text-sm font-medium text-foreground mb-2">
-                      Nome *
-                    </label>
-                    <input
-                      type="text"
-                      id="name"
-                      name="name"
-                      value={formData.name}
-                      onChange={handleChange}
-                      required
-                      className="w-full px-4 py-3 rounded-lg border border-input bg-background text-foreground focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-colors"
-                      placeholder="O seu nome"
-                    />
-                  </div>
-                  <div>
-                    <label htmlFor="email" className="block text-sm font-medium text-foreground mb-2">
-                      Email *
-                    </label>
-                    <input
-                      type="email"
-                      id="email"
-                      name="email"
-                      value={formData.email}
-                      onChange={handleChange}
-                      required
-                      className="w-full px-4 py-3 rounded-lg border border-input bg-background text-foreground focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-colors"
-                      placeholder="email@empresa.com"
-                    />
-                  </div>
-                </div>
-                
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                  <div>
-                    <label htmlFor="company" className="block text-sm font-medium text-foreground mb-2">
-                      Empresa
-                    </label>
-                    <input
-                      type="text"
-                      id="company"
-                      name="company"
-                      value={formData.company}
-                      onChange={handleChange}
-                      className="w-full px-4 py-3 rounded-lg border border-input bg-background text-foreground focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-colors"
-                      placeholder="Nome da empresa"
-                    />
-                  </div>
-                  <div>
-                    <label htmlFor="phone" className="block text-sm font-medium text-foreground mb-2">
-                      Telefone
-                    </label>
-                    <input
-                      type="tel"
-                      id="phone"
-                      name="phone"
-                      value={formData.phone}
-                      onChange={handleChange}
-                      className="w-full px-4 py-3 rounded-lg border border-input bg-background text-foreground focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-colors"
-                      placeholder="+351 900 000 000"
-                    />
-                  </div>
-                </div>
-                
-                <div>
-                  <label htmlFor="message" className="block text-sm font-medium text-foreground mb-2">
-                    Mensagem
-                  </label>
-                  <textarea
-                    id="message"
-                    name="message"
-                    value={formData.message}
-                    onChange={handleChange}
-                    rows={4}
-                    className="w-full px-4 py-3 rounded-lg border border-input bg-background text-foreground focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-colors resize-none"
-                    placeholder="Conte-nos sobre o seu negócio e como podemos ajudar..."
-                  />
-                </div>
-                
-                <button
-                  type="submit"
-                  disabled={isSubmitting}
-                  className="w-full bg-gradient-to-r from-primary to-accent text-white font-semibold py-4 px-8 rounded-lg hover:from-primary/90 hover:to-accent/90 transition-all duration-300 transform hover:scale-[1.02] disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100 shadow-lg hover:shadow-xl"
-                >
-                  {isSubmitting ? (
-                    <div className="flex items-center justify-center space-x-2">
-                      <div className="w-5 h-5 border-2 border-white/30 border-t-white rounded-full animate-spin" />
-                      <span>A enviar...</span>
-                    </div>
-                  ) : (
-                    'Agendar Demonstração Gratuita'
-                  )}
-                </button>
-                
-                <p className="text-xs text-muted-foreground text-center">
-                  Ao submeter este formulário, aceita os nossos{' '}
-                  <a href="/termos-privacidade" className="text-primary hover:underline">
-                    termos de privacidade
-                  </a>
-                </p>
-              </form>
-            </div>
+            <a 
+              href="https://calendly.com/frontera_ai/introduction-technology-demo" 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              className="inline-block bg-gradient-to-r from-primary to-accent text-white font-semibold py-4 px-8 rounded-lg hover:from-primary/90 hover:to-accent/90 transition-all duration-300 transform hover:scale-[1.02] shadow-lg hover:shadow-xl"
+            >
+              Agendar Demonstração Gratuita
+            </a>
           </div>
         </div>
       </div>
-    </section>;
+    </section>
+  );
 };
+
 export default ContactForm;
