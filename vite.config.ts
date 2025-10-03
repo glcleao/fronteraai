@@ -1,4 +1,4 @@
-import { defineConfig } from "vite";
+ import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react-swc";
 import path from "path";
 import { componentTagger } from "lovable-tagger";
@@ -9,10 +9,10 @@ export default defineConfig(({ mode }) => ({
     host: "::",
     port: 8080,
   },
+  base: "/",   // 👈 THIS LINE IS CRUCIAL for GitHub Pages + custom domains
   plugins: [
     react(),
-    mode === 'development' &&
-    componentTagger(),
+    mode === "development" && componentTagger(),
   ].filter(Boolean),
   resolve: {
     alias: {
@@ -20,3 +20,4 @@ export default defineConfig(({ mode }) => ({
     },
   },
 }));
+
