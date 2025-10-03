@@ -54,7 +54,7 @@ const ContactForm = () => {
             </div>
 
             <a 
-              href="https://calendly.com/frontera_ai/introduction-technology-demo" 
+              href="https://calendly.com/frontera-ai-info/45min" 
               target="_blank" 
               rel="noopener noreferrer" 
               className="inline-block bg-gradient-to-r from-primary to-accent text-white font-semibold py-4 px-8 rounded-lg hover:from-primary/90 hover:to-accent/90 transition-all duration-300 transform hover:scale-[1.02] shadow-lg hover:shadow-xl"
