@@ -70,7 +70,7 @@ const Navigation = () => {
             <button onClick={() => scrollToSection('contacto')} className="block w-full text-left px-4 py-2 text-sm font-medium text-muted-foreground hover:text-foreground transition-colors">
               Contacto
             </button>
-            <a href="https://calendly.com/frontera_ai/introduction-technology-demo" target="_blank" rel="noopener noreferrer" className="w-full btn-hero text-sm mt-4 inline-block text-center">
+            <a href="https://calendly.com/frontera-ai-info/45min" target="_blank" rel="noopener noreferrer" className="w-full btn-hero text-sm mt-4 inline-block text-center">
               Agendar Demonstração Gratuita
             </a>
           </div>}
