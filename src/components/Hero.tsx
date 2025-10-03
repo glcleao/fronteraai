@@ -25,7 +25,7 @@ const Hero = () => {
           {/* CTA Button */}
           <div className="space-y-4">
             <a 
-              href="https://calendly.com/frontera_ai/introduction-technology-demo"
+              href="https://calendly.com/frontera-ai-info/45min"
               target="_blank"
               rel="noopener noreferrer"
               className="btn-hero inline-block"
