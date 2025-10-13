@@ -42,7 +42,9 @@ const Navigation = () => {
             <button onClick={() => scrollToSection('demonstracao')} className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors">
               Demonstração
             </button>
-            
+            <button onClick={() => navigate('/calculadora-roi')} className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors">
+              Calculadora ROI
+            </button>
             <button onClick={() => scrollToSection('contacto')} className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors">
               Contacto
             </button>
@@ -66,6 +68,12 @@ const Navigation = () => {
             </button>
             <button onClick={() => scrollToSection('demonstracao')} className="block w-full text-left px-4 py-2 text-sm font-medium text-muted-foreground hover:text-foreground transition-colors">
               Demonstração
+            </button>
+            <button onClick={() => {
+              navigate('/calculadora-roi');
+              setIsMenuOpen(false);
+            }} className="block w-full text-left px-4 py-2 text-sm font-medium text-muted-foreground hover:text-foreground transition-colors">
+              Calculadora ROI
             </button>
             <button onClick={() => scrollToSection('contacto')} className="block w-full text-left px-4 py-2 text-sm font-medium text-muted-foreground hover:text-foreground transition-colors">
               Contacto
