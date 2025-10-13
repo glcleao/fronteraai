@@ -54,6 +54,14 @@ const CalculadoraROI = () => {
       receitaPerdidaPorDia,
       receitaPerdidaTotal
     });
+
+    // Scroll to results section
+    setTimeout(() => {
+      const element = document.getElementById('resultados');
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    }, 100);
   };
 
   const formatEuro = (value: number) => {
@@ -84,7 +92,7 @@ const CalculadoraROI = () => {
           <div className="text-center max-w-4xl mx-auto mb-12">
             <h1 className="text-4xl md:text-6xl font-bold mb-6 leading-tight">
               Calculadora de
-              <span className="text-gradient block">ROI Perdido</span>
+              <span className="text-gradient block">Oportunidade</span>
             </h1>
             <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto">
               Descubra quanto dinheiro a sua empresa está a perder por não contactar leads esquecidos
@@ -163,43 +171,19 @@ const CalculadoraROI = () => {
                   </div>
 
                   <Button type="submit" size="lg" className="w-full">
-                    Calcular ROI Perdido
+                    Descobre as suas perdas
                   </Button>
                 </form>
               </CardContent>
             </Card>
 
             {resultados && (
-              <div className="mt-12 space-y-6">
+              <div id="resultados" className="mt-12 space-y-6">
                 <h2 className="text-3xl font-bold text-center mb-8">
                   Os Seus <span className="text-gradient">Resultados</span>
                 </h2>
 
                 <div className="grid md:grid-cols-2 gap-6">
-                  <Card className="card-premium">
-                    <CardHeader>
-                      <CardTitle className="text-lg">Dias para Processar</CardTitle>
-                      <CardDescription>Tempo necessário para contactar todas as leads</CardDescription>
-                    </CardHeader>
-                    <CardContent>
-                      <div className="text-4xl font-bold text-gradient">
-                        {formatNumber(resultados.diasParaProcessar)} dias
-                      </div>
-                    </CardContent>
-                  </Card>
-
-                  <Card className="card-premium">
-                    <CardHeader>
-                      <CardTitle className="text-lg">Vendas Perdidas por Dia</CardTitle>
-                      <CardDescription>Com taxa de conversão de 5%</CardDescription>
-                    </CardHeader>
-                    <CardContent>
-                      <div className="text-4xl font-bold text-gradient">
-                        {formatNumber(resultados.vendasPerdidasPorDia)}
-                      </div>
-                    </CardContent>
-                  </Card>
-
                   <Card className="card-premium">
                     <CardHeader>
                       <CardTitle className="text-lg">Receita Perdida por Dia</CardTitle>
@@ -223,13 +207,37 @@ const CalculadoraROI = () => {
                       </div>
                     </CardContent>
                   </Card>
+
+                  <Card className="card-premium">
+                    <CardHeader>
+                      <CardTitle className="text-lg">Vendas Perdidas por Dia</CardTitle>
+                      <CardDescription>Com taxa de conversão de 5%</CardDescription>
+                    </CardHeader>
+                    <CardContent>
+                      <div className="text-4xl font-bold text-gradient">
+                        {formatNumber(resultados.vendasPerdidasPorDia)}
+                      </div>
+                    </CardContent>
+                  </Card>
+
+                  <Card className="card-premium">
+                    <CardHeader>
+                      <CardTitle className="text-lg">Dias para Processar</CardTitle>
+                      <CardDescription>Tempo necessário para contactar todas as leads</CardDescription>
+                    </CardHeader>
+                    <CardContent>
+                      <div className="text-4xl font-bold text-gradient">
+                        {formatNumber(resultados.diasParaProcessar)} dias
+                      </div>
+                    </CardContent>
+                  </Card>
                 </div>
 
                 <Card className="card-premium bg-gradient-to-br from-primary/10 to-accent/10 border-primary/30 mt-8">
                   <CardContent className="pt-6">
                     <div className="text-center space-y-4">
                       <h3 className="text-2xl font-bold">
-                        Recupere Este Valor com a <span className="text-gradient">Frontera</span>
+                        Recupere Este Valor com a <span className="text-gradient">frontera</span>
                       </h3>
                       <p className="text-muted-foreground max-w-2xl mx-auto">
                         A nossa IA contacta automaticamente os seus leads esquecidos e converte-os em vendas. 
