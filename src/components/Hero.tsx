@@ -1,6 +1,9 @@
 import { useState, useEffect } from 'react';
+import { useLanguage } from '@/contexts/LanguageContext';
+
 const Hero = () => {
   const [isVisible, setIsVisible] = useState(false);
+  const { t } = useLanguage();
   useEffect(() => {
     setIsVisible(true);
   }, []);
@@ -14,13 +17,13 @@ const Hero = () => {
         <div className={`text-center max-w-4xl mx-auto transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
           {/* Headline */}
           <h1 className="text-5xl md:text-7xl font-bold mb-6 leading-tight py-px">
-            Transforme
-            <span className="text-gradient block px-0 py-px">Leads Antigos</span>
-            em Vendas Reais
+            {t.hero.title}
+            <span className="text-gradient block px-0 py-px">{t.hero.titleHighlight}</span>
+            {t.hero.titleEnd}
           </h1>
           
           {/* Subheadline */}
-          <p className="text-xl md:text-2xl text-muted-foreground mb-8 max-w-3xl mx-auto">A nossa IA personalizada contacta automaticamente os seus leads esquecidos por SMS e converte-os em vendas.</p>
+          <p className="text-xl md:text-2xl text-muted-foreground mb-8 max-w-3xl mx-auto">{t.hero.subtitle}</p>
           
           {/* CTA Button */}
           <div className="space-y-4">
@@ -30,24 +33,24 @@ const Hero = () => {
               rel="noopener noreferrer"
               className="btn-hero inline-block"
             >
-              Agendar Demonstração
+              {t.hero.cta}
             </a>
-            <p className="text-sm text-muted-foreground">Sem compromisso</p>
+            <p className="text-sm text-muted-foreground">{t.hero.noCommitment}</p>
           </div>
           
           {/* Stats */}
           <div className={`grid grid-cols-3 gap-8 mt-16 max-w-2xl mx-auto transition-all duration-1000 delay-500 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
             <div className="text-center">
-              <div className="text-3xl font-bold text-gradient">5%</div>
-              <div className="text-sm text-muted-foreground py-[5px]">Taxa de Resposta</div>
+              <div className="text-3xl font-bold text-gradient">{t.hero.stats.responseValue}</div>
+              <div className="text-sm text-muted-foreground py-[5px]">{t.hero.stats.responseRate}</div>
             </div>
             <div className="text-center">
-              <div className="text-3xl font-bold text-gradient">Sem Risco</div>
-              <div className="text-sm text-muted-foreground py-[5px]">Performance-based</div>
+              <div className="text-3xl font-bold text-gradient">{t.hero.stats.noRisk}</div>
+              <div className="text-sm text-muted-foreground py-[5px]">{t.hero.stats.performanceBased}</div>
             </div>
             <div className="text-center">
-              <div className="text-3xl font-bold text-gradient">1 Semana</div>
-              <div className="text-sm text-muted-foreground py-[5px]">Implementação</div>
+              <div className="text-3xl font-bold text-gradient">{t.hero.stats.implementationValue}</div>
+              <div className="text-sm text-muted-foreground py-[5px]">{t.hero.stats.implementation}</div>
             </div>
           </div>
         </div>

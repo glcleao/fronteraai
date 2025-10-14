@@ -1,10 +1,13 @@
 import { useState } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
+import { useLanguage } from '@/contexts/LanguageContext';
 import Logo from './Logo';
+import LanguageSelector from './LanguageSelector';
 const Navigation = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const navigate = useNavigate();
   const location = useLocation();
+  const { t } = useLanguage();
   const scrollToSection = (sectionId: string) => {
     // If we're not on the home page, navigate to home first
     if (location.pathname !== '/') {
@@ -37,19 +40,20 @@ const Navigation = () => {
           {/* Desktop Menu */}
           <div className="hidden md:flex items-center space-x-8">
             <button onClick={() => scrollToSection('hero')} className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors">
-              Início
+              {t.navigation.inicio}
             </button>
             <button onClick={() => scrollToSection('demonstracao')} className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors">
-              Demonstração
+              {t.navigation.demonstracao}
             </button>
             <button onClick={() => navigate('/calculadora-roi')} className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors">
-              Calculadora
+              {t.navigation.calculadora}
             </button>
             <button onClick={() => scrollToSection('contacto')} className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors">
-              Contacto
+              {t.navigation.contacto}
             </button>
+            <LanguageSelector />
             <a href="https://calendly.com/frontera-ai-info/45min" target="_blank" rel="noopener noreferrer" className="btn-hero text-sm px-4 py-2 inline-block">
-              Agendar Demonstração Gratuita
+              {t.navigation.agendarDemo}
             </a>
           </div>
 
@@ -63,23 +67,26 @@ const Navigation = () => {
 
         {/* Mobile Menu */}
         {isMenuOpen && <div className="md:hidden py-4 space-y-2">
+            <div className="px-4 py-2">
+              <LanguageSelector />
+            </div>
             <button onClick={() => scrollToSection('hero')} className="block w-full text-left px-4 py-2 text-sm font-medium text-muted-foreground hover:text-foreground transition-colors">
-              Início
+              {t.navigation.inicio}
             </button>
             <button onClick={() => scrollToSection('demonstracao')} className="block w-full text-left px-4 py-2 text-sm font-medium text-muted-foreground hover:text-foreground transition-colors">
-              Demonstração
+              {t.navigation.demonstracao}
             </button>
             <button onClick={() => {
               navigate('/calculadora-roi');
               setIsMenuOpen(false);
             }} className="block w-full text-left px-4 py-2 text-sm font-medium text-muted-foreground hover:text-foreground transition-colors">
-              Calculadora
+              {t.navigation.calculadora}
             </button>
             <button onClick={() => scrollToSection('contacto')} className="block w-full text-left px-4 py-2 text-sm font-medium text-muted-foreground hover:text-foreground transition-colors">
-              Contacto
+              {t.navigation.contacto}
             </button>
             <a href="https://calendly.com/frontera-ai-info/45min" target="_blank" rel="noopener noreferrer" className="w-full btn-hero text-sm mt-4 inline-block text-center">
-              Agendar Demonstração Gratuita
+              {t.navigation.agendarDemo}
             </a>
           </div>}
       </div>

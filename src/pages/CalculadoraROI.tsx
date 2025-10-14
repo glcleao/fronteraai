@@ -5,8 +5,10 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/com
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { Button } from '@/components/ui/button';
+import { useLanguage } from '@/contexts/LanguageContext';
 
 const CalculadoraROI = () => {
+  const { t, language } = useLanguage();
   const [formData, setFormData] = useState({
     leadsNaoContactadas: '',
     leadsProcessadasPorDia: '',
@@ -65,14 +67,16 @@ const CalculadoraROI = () => {
   };
 
   const formatEuro = (value: number) => {
-    return new Intl.NumberFormat('pt-PT', {
+    const locale = language === 'en' ? 'en-US' : language === 'es' ? 'es-ES' : 'pt-PT';
+    return new Intl.NumberFormat(locale, {
       style: 'currency',
       currency: 'EUR'
     }).format(value);
   };
 
   const formatNumber = (value: number) => {
-    return new Intl.NumberFormat('pt-PT', {
+    const locale = language === 'en' ? 'en-US' : language === 'es' ? 'es-ES' : 'pt-PT';
+    return new Intl.NumberFormat(locale, {
       maximumFractionDigits: 2,
       minimumFractionDigits: 2
     }).format(value);
@@ -91,25 +95,25 @@ const CalculadoraROI = () => {
         <div className="container mx-auto px-6 relative z-10">
           <div className="text-center max-w-4xl mx-auto mb-12">
             <h1 className="text-4xl md:text-6xl font-bold mb-6 leading-tight">
-              Calculadora de
-              <span className="text-gradient block">Oportunidade</span>
+              {t.calculator.title.split(' ')[0]} {t.calculator.title.split(' ')[1]}
+              <span className="text-gradient block">{t.calculator.title.split(' ').slice(2).join(' ')}</span>
             </h1>
             <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto">
-              Descubra quanto dinheiro a sua empresa está a perder por não contactar leads esquecidos
+              {t.calculator.subtitle}
             </p>
           </div>
 
           <div className="max-w-4xl mx-auto">
             <Card className="card-premium">
               <CardHeader>
-                <CardTitle className="text-2xl">Insira os Seus Dados</CardTitle>
-                <CardDescription>Preencha as informações abaixo para calcular o impacto financeiro</CardDescription>
+                <CardTitle className="text-2xl">{t.calculator.form.leadsLabel.includes('Não') ? 'Insira os Seus Dados' : language === 'es' ? 'Ingrese Sus Datos' : 'Enter Your Data'}</CardTitle>
+                <CardDescription>{language === 'pt' ? 'Preencha as informações abaixo para calcular o impacto financeiro' : language === 'es' ? 'Complete la información a continuación para calcular el impacto financiero' : 'Fill in the information below to calculate the financial impact'}</CardDescription>
               </CardHeader>
               <CardContent>
                 <form onSubmit={calcularROI} className="space-y-6">
                   <div className="grid md:grid-cols-2 gap-6">
                     <div className="space-y-2">
-                      <Label htmlFor="leadsNaoContactadas">Leads Não Contactadas</Label>
+                      <Label htmlFor="leadsNaoContactadas">{t.calculator.form.leadsLabel}</Label>
                       <Input
                         id="leadsNaoContactadas"
                         name="leadsNaoContactadas"
@@ -118,13 +122,13 @@ const CalculadoraROI = () => {
                         step="1"
                         value={formData.leadsNaoContactadas}
                         onChange={handleInputChange}
-                        placeholder="Ex: 1000"
+                        placeholder={t.calculator.form.leadsPlaceholder}
                         required
                       />
                     </div>
 
                     <div className="space-y-2">
-                      <Label htmlFor="leadsProcessadasPorDia">Leads Processadas por Dia</Label>
+                      <Label htmlFor="leadsProcessadasPorDia">{t.calculator.form.processedLabel}</Label>
                       <Input
                         id="leadsProcessadasPorDia"
                         name="leadsProcessadasPorDia"
@@ -133,13 +137,13 @@ const CalculadoraROI = () => {
                         step="1"
                         value={formData.leadsProcessadasPorDia}
                         onChange={handleInputChange}
-                        placeholder="Ex: 50"
+                        placeholder={t.calculator.form.processedPlaceholder}
                         required
                       />
                     </div>
 
                     <div className="space-y-2">
-                      <Label htmlFor="ticketMedio">Ticket Médio (€)</Label>
+                      <Label htmlFor="ticketMedio">{t.calculator.form.ticketLabel}</Label>
                       <Input
                         id="ticketMedio"
                         name="ticketMedio"
@@ -148,13 +152,13 @@ const CalculadoraROI = () => {
                         step="0.01"
                         value={formData.ticketMedio}
                         onChange={handleInputChange}
-                        placeholder="Ex: 500.00"
+                        placeholder={t.calculator.form.ticketPlaceholder}
                         required
                       />
                     </div>
 
                     <div className="space-y-2">
-                      <Label htmlFor="periodoEmDias">Período de Análise (dias)</Label>
+                      <Label htmlFor="periodoEmDias">{t.calculator.form.periodLabel}</Label>
                       <Input
                         id="periodoEmDias"
                         name="periodoEmDias"
@@ -164,14 +168,14 @@ const CalculadoraROI = () => {
                         step="1"
                         value={formData.periodoEmDias}
                         onChange={handleInputChange}
-                        placeholder="Ex: 30"
+                        placeholder={t.calculator.form.periodPlaceholder}
                         required
                       />
                     </div>
                   </div>
 
                   <Button type="submit" size="lg" className="w-full">
-                    Descobre as suas perdas
+                    {t.calculator.form.submit}
                   </Button>
                 </form>
               </CardContent>
@@ -180,14 +184,14 @@ const CalculadoraROI = () => {
             {resultados && (
               <div id="resultados" className="mt-12 space-y-6">
                 <h2 className="text-3xl font-bold text-center mb-8">
-                  Os Seus <span className="text-gradient">Resultados</span>
+                  {t.calculator.results.title.split(' ')[0]} {t.calculator.results.title.split(' ')[1]} <span className="text-gradient">{t.calculator.results.title.split(' ').slice(2).join(' ')}</span>
                 </h2>
 
                 <div className="grid md:grid-cols-2 gap-6">
                   <Card className="card-premium">
                     <CardHeader>
-                      <CardTitle className="text-lg">Receita Perdida por Dia</CardTitle>
-                      <CardDescription>Valor diário não recuperado</CardDescription>
+                      <CardTitle className="text-lg">{t.calculator.results.lostPerDay}</CardTitle>
+                      <CardDescription>{language === 'pt' ? 'Valor diário não recuperado' : language === 'es' ? 'Valor diario no recuperado' : 'Daily value not recovered'}</CardDescription>
                     </CardHeader>
                     <CardContent>
                       <div className="text-4xl font-bold text-gradient">
@@ -198,8 +202,8 @@ const CalculadoraROI = () => {
 
                   <Card className="card-premium border-primary/50 bg-gradient-to-br from-primary/5 to-primary/10">
                     <CardHeader>
-                      <CardTitle className="text-lg">Receita Total Perdida</CardTitle>
-                      <CardDescription>No período de {formData.periodoEmDias} dias</CardDescription>
+                      <CardTitle className="text-lg">{t.calculator.results.totalLost}</CardTitle>
+                      <CardDescription>{language === 'pt' ? `No período de ${formData.periodoEmDias} dias` : language === 'es' ? `En el período de ${formData.periodoEmDias} días` : `In the period of ${formData.periodoEmDias} days`}</CardDescription>
                     </CardHeader>
                     <CardContent>
                       <div className="text-5xl font-bold text-gradient">
@@ -210,8 +214,8 @@ const CalculadoraROI = () => {
 
                   <Card className="card-premium">
                     <CardHeader>
-                      <CardTitle className="text-lg">Vendas Perdidas por Dia</CardTitle>
-                      <CardDescription>Com taxa de conversão de 5%</CardDescription>
+                      <CardTitle className="text-lg">{t.calculator.results.salesPerDay}</CardTitle>
+                      <CardDescription>{language === 'pt' ? 'Com taxa de conversão de 5%' : language === 'es' ? 'Con tasa de conversión del 5%' : 'With 5% conversion rate'}</CardDescription>
                     </CardHeader>
                     <CardContent>
                       <div className="text-4xl font-bold text-gradient">
@@ -222,12 +226,12 @@ const CalculadoraROI = () => {
 
                   <Card className="card-premium">
                     <CardHeader>
-                      <CardTitle className="text-lg">Dias para Processar</CardTitle>
-                      <CardDescription>Tempo necessário para contactar todas as leads</CardDescription>
+                      <CardTitle className="text-lg">{t.calculator.results.daysToProcess}</CardTitle>
+                      <CardDescription>{language === 'pt' ? 'Tempo necessário para contactar todas as leads' : language === 'es' ? 'Tiempo necesario para contactar todos los leads' : 'Time needed to contact all leads'}</CardDescription>
                     </CardHeader>
                     <CardContent>
                       <div className="text-4xl font-bold text-gradient">
-                        {formatNumber(resultados.diasParaProcessar)} dias
+                        {formatNumber(resultados.diasParaProcessar)} {t.calculator.results.days}
                       </div>
                     </CardContent>
                   </Card>
@@ -237,11 +241,10 @@ const CalculadoraROI = () => {
                   <CardContent className="pt-6">
                     <div className="text-center space-y-4">
                       <h3 className="text-2xl font-bold">
-                        Recupere Este Valor com a <span className="text-gradient">frontera</span>
+                        {t.calculator.results.cta}
                       </h3>
                       <p className="text-muted-foreground max-w-2xl mx-auto">
-                        A nossa IA contacta automaticamente os seus leads esquecidos e converte-os em vendas. 
-                        Sem risco, apenas paga por resultados.
+                        {language === 'pt' ? 'A nossa IA contacta automaticamente os seus leads esquecidos e converte-os em vendas. Sem risco, apenas paga por resultados.' : language === 'es' ? 'Nuestra IA contacta automáticamente a sus leads olvidados y los convierte en ventas. Sin riesgo, solo paga por resultados.' : 'Our AI automatically contacts your forgotten leads and converts them into sales. No risk, you only pay for results.'}
                       </p>
                       <a 
                         href="https://calendly.com/frontera-ai-info/45min"
@@ -249,7 +252,7 @@ const CalculadoraROI = () => {
                         rel="noopener noreferrer"
                         className="btn-hero inline-block"
                       >
-                        Agendar Demonstração Gratuita
+                        {t.calculator.results.ctaButton}
                       </a>
                     </div>
                   </CardContent>
