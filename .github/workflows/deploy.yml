@@ -2,28 +2,33 @@ name: Deploy Vite site to GitHub Pages
 
 on:
   push:
-    branches: [ main ]   # Sempre que fizeres push ao branch main
+    branches: [ main ]
+
+permissions:
+  contents: write
 
 jobs:
   build-deploy:
-    runs-on: ubuntu-latest   # O GitHub vai usar uma máquina Linux temporária
+    runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-        # Clona o código do teu repositório
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0  # preciso do histórico completo para o gh-pages funcionar
 
-      - uses: actions/setup-node@v4
+      - name: Setup Node
+        uses: actions/setup-node@v4
         with:
           node-version: 20
-        # Instala o Node.js versão 20
 
-      - run: npm ci
-        # Instala as dependências (igual a npm install mas mais rápido)
+      - name: Install dependencies
+        run: npm ci
 
-      - run: npm run build
-        # Cria o build do teu projeto (gera a pasta dist)
+      - name: Build project
+        run: npm run build
 
-      - uses: peaceiris/actions-gh-pages@v4
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v4
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./dist
-        # Publica o conteúdo da pasta dist no branch gh-pages
