@@ -42,14 +42,11 @@ const Navigation = () => {
             <button onClick={() => scrollToSection('hero')} className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors">
               {t.navigation.inicio}
             </button>
-            <button onClick={() => scrollToSection('demonstracao')} className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors">
-              {t.navigation.demonstracao}
-            </button>
             <button onClick={() => navigate('/calculadora-roi')} className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors">
               {t.navigation.calculadora}
             </button>
-            <button onClick={() => scrollToSection('contacto')} className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors">
-              {t.navigation.contacto}
+            <button onClick={() => scrollToSection('demonstracao')} className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors">
+              {t.navigation.demonstracao}
             </button>
             <LanguageSelector />
             <a href="https://calendly.com/frontera-ai-info/45min" target="_blank" rel="noopener noreferrer" className="btn-hero text-sm px-4 py-2 inline-block">
@@ -73,17 +70,14 @@ const Navigation = () => {
             <button onClick={() => scrollToSection('hero')} className="block w-full text-left px-4 py-2 text-sm font-medium text-muted-foreground hover:text-foreground transition-colors">
               {t.navigation.inicio}
             </button>
-            <button onClick={() => scrollToSection('demonstracao')} className="block w-full text-left px-4 py-2 text-sm font-medium text-muted-foreground hover:text-foreground transition-colors">
-              {t.navigation.demonstracao}
-            </button>
             <button onClick={() => {
               navigate('/calculadora-roi');
               setIsMenuOpen(false);
             }} className="block w-full text-left px-4 py-2 text-sm font-medium text-muted-foreground hover:text-foreground transition-colors">
               {t.navigation.calculadora}
             </button>
-            <button onClick={() => scrollToSection('contacto')} className="block w-full text-left px-4 py-2 text-sm font-medium text-muted-foreground hover:text-foreground transition-colors">
-              {t.navigation.contacto}
+            <button onClick={() => scrollToSection('demonstracao')} className="block w-full text-left px-4 py-2 text-sm font-medium text-muted-foreground hover:text-foreground transition-colors">
+              {t.navigation.demonstracao}
             </button>
             <a href="https://calendly.com/frontera-ai-info/45min" target="_blank" rel="noopener noreferrer" className="w-full btn-hero text-sm mt-4 inline-block text-center">
               {t.navigation.agendarDemo}

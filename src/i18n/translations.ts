@@ -3,9 +3,8 @@ export type Language = 'pt' | 'es' | 'en';
 export interface Translations {
   navigation: {
     inicio: string;
-    demonstracao: string;
     calculadora: string;
-    contacto: string;
+    demonstracao: string;
     agendarDemo: string;
   };
   hero: {
@@ -88,9 +87,8 @@ export const translations: Record<Language, Translations> = {
   pt: {
     navigation: {
       inicio: 'Início',
-      demonstracao: 'Demonstração',
       calculadora: 'Calculadora',
-      contacto: 'Contacto',
+      demonstracao: 'Demonstração',
       agendarDemo: 'Agendar Demonstração Gratuita',
     },
     hero: {
@@ -146,7 +144,7 @@ export const translations: Record<Language, Translations> = {
         },
         {
           type: 'response',
-          content: 'Compreendo perfeitamente. Gerir custos eficazmente é super importante. Aqui na UK Solar, reconhecemos que as necessidades de cada um são diferentes, é por isso que temos várias opções de financiamento, esperando ajudá-lo a manter-se dentro do orçamento. Quer discutir isto mais com um consultor, numa chamada?',
+          content: 'Compreendo perfeitamente. Gerir custos eficazmente é super importante. Aqui na YOURCOMPANY, reconhecemos que as necessidades de cada um são diferentes, é por isso que temos várias opções de financiamento, esperando ajudá-lo a manter-se dentro do orçamento. Quer discutir isto mais com um consultor, numa chamada?',
           delay: 11000,
         },
         {
@@ -227,9 +225,8 @@ export const translations: Record<Language, Translations> = {
   es: {
     navigation: {
       inicio: 'Inicio',
-      demonstracao: 'Demostración',
       calculadora: 'Calculadora',
-      contacto: 'Contacto',
+      demonstracao: 'Demostración',
       agendarDemo: 'Agendar Demostración Gratuita',
     },
     hero: {
@@ -285,7 +282,7 @@ export const translations: Record<Language, Translations> = {
         },
         {
           type: 'response',
-          content: 'Lo entiendo perfectamente. Gestionar costos eficazmente es súper importante. Aquí en UK Solar, reconocemos que las necesidades de cada uno son diferentes, por eso tenemos varias opciones de financiamiento, esperando ayudarlo a mantenerse dentro del presupuesto. ¿Quiere discutir esto más con un consultor, en una llamada?',
+          content: 'Lo entiendo perfectamente. Gestionar costos eficazmente es súper importante. Aquí en YOURCOMPANY, reconocemos que las necesidades de cada uno son diferentes, por eso tenemos varias opciones de financiamiento, esperando ayudarlo a mantenerse dentro del presupuesto. ¿Quiere discutir esto más con un consultor, en una llamada?',
           delay: 11000,
         },
         {
@@ -366,9 +363,8 @@ export const translations: Record<Language, Translations> = {
   en: {
     navigation: {
       inicio: 'Home',
-      demonstracao: 'Demo',
       calculadora: 'Calculator',
-      contacto: 'Contact',
+      demonstracao: 'Demo',
       agendarDemo: 'Schedule Free Demo',
     },
     hero: {
@@ -424,7 +420,7 @@ export const translations: Record<Language, Translations> = {
         },
         {
           type: 'response',
-          content: 'I understand perfectly. Managing costs effectively is super important. Here at UK Solar, we recognize that everyone\'s needs are different, which is why we have various financing options, hoping to help you stay within budget. Do you want to discuss this further with a consultant, on a call?',
+          content: 'I understand perfectly. Managing costs effectively is super important. Here at YOURCOMPANY, we recognize that everyone\'s needs are different, which is why we have various financing options, hoping to help you stay within budget. Do you want to discuss this further with a consultant, on a call?',
           delay: 11000,
         },
         {
