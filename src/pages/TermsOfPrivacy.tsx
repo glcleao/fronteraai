@@ -1,19 +1,9 @@
-import { useEffect } from 'react';
 import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
 import { useLanguage } from '@/contexts/LanguageContext';
 
 const TermsOfPrivacy = () => {
   const { language } = useLanguage();
-
-  useEffect(() => {
-    const titles = {
-      pt: 'Termos de Privacidade | frontera',
-      es: 'Términos de Privacidad | frontera',
-      en: 'Privacy Terms | frontera'
-    };
-    document.title = titles[language];
-  }, [language]);
 
   const content = {
     pt: {
