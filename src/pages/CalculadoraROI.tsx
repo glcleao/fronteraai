@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
@@ -9,6 +9,15 @@ import { useLanguage } from '@/contexts/LanguageContext';
 
 const CalculadoraROI = () => {
   const { t, language } = useLanguage();
+
+  useEffect(() => {
+    const titles = {
+      pt: 'Calculadora ROI | frontera',
+      es: 'Calculadora ROI | frontera',
+      en: 'ROI Calculator | frontera'
+    };
+    document.title = titles[language];
+  }, [language]);
   const [formData, setFormData] = useState({
     leadsNaoContactadas: '',
     leadsProcessadasPorDia: '',
