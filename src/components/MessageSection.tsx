@@ -45,14 +45,11 @@ const MessageSection = () => {
               {/* Header */}
               <div className="text-center mb-6 pb-4 border-b border-border">
                 <div className="text-sm text-muted-foreground mb-1">{t.demo.header.messages}</div>
-                <div className="font-semibold">{t.demo.header.leadConverted}</div>
               </div>
 
               {/* Messages */}
               <div className="space-y-4">
-                {messages.slice(0, visibleMessages).map((message, index) => <div key={index} className={`animate-slide-up ${message.type === 'user' ? 'flex justify-end' : 'flex justify-start'}`} style={{
-                animationDelay: `${index * 0.2}s`
-              }}>
+                {messages.slice(0, visibleMessages).map((message, index) => <div key={index} className={`animate-fade-in ${message.type === 'user' ? 'flex justify-end' : 'flex justify-start'}`}>
                     <div className={message.type === 'user' ? 'message-bubble' : 'message-response'}>
                       {message.content}
                     </div>
@@ -69,15 +66,6 @@ const MessageSection = () => {
                     </div>
                   </div>
                 </div>}
-            </div>
-          </div>
-
-          {/* Results Box */}
-          <div className="mt-8 text-center">
-            <div className="card-premium inline-block py-[10px]">
-              <div className="text-sm text-muted-foreground mb-2">{t.demo.result}</div>
-              <div className="text-lg font-semibold text-gradient">{t.demo.resultText}</div>
-              <div className="text-sm text-muted-foreground mt-1">{t.demo.value}: €4,500 • {t.demo.time}: 14 minutos</div>
             </div>
           </div>
         </div>
