@@ -9,7 +9,7 @@ export default defineConfig(({ mode }) => ({
     host: "::",
     port: 8080,
   },
-  base: "./",   // 👈 THIS LINE IS CRUCIAL for GitHub Pages + custom domains
+  base: "/",   // 👈 THIS LINE IS CRUCIAL for GitHub Pages + custom domains
   plugins: [
     react(),
     mode === "development" && componentTagger(),
