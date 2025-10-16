@@ -1,4 +1,5 @@
 import { useLanguage } from '@/contexts/LanguageContext';
+import { Link } from 'react-router-dom';
 
 const Footer = () => {
   const { t } = useLanguage();
@@ -11,12 +12,12 @@ const Footer = () => {
             © {new Date().getFullYear()} Frontera AI. {t.footer.copyright}.
           </p>
           <div>
-            <a 
-              href="/terms-of-privacy" 
+            <Link 
+              to="/terms-of-privacy" 
               className="text-sm text-muted-foreground hover:text-foreground transition-colors underline"
             >
               {t.footer.privacy}
-            </a>
+            </Link>
           </div>
         </div>
       </div>
