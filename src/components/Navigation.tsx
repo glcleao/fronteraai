@@ -38,20 +38,22 @@ const Navigation = () => {
           <Logo />
           
           {/* Desktop Menu */}
-          <div className="hidden md:flex items-center space-x-8">
-            <button onClick={() => scrollToSection('hero')} className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors whitespace-nowrap">
-              {t.navigation.inicio}
-            </button>
-            <button onClick={() => scrollToSection('demonstracao')} className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors whitespace-nowrap">
-              {t.navigation.demonstracao}
-            </button>
-            <button onClick={() => navigate('/calculadora-roi')} className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors whitespace-nowrap">
-              {t.navigation.calculadora}
-            </button>
-            <LanguageSelector />
-            <a href="https://calendly.com/frontera-ai-info/45min" target="_blank" rel="noopener noreferrer" className="btn-hero text-sm px-4 py-2 inline-block whitespace-nowrap">
-              {t.navigation.agendarDemo}
-            </a>
+          <div className="hidden md:flex items-center justify-center flex-1">
+            <div className="flex items-center gap-6">
+              <button onClick={() => scrollToSection('hero')} className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors whitespace-nowrap min-w-[80px] text-center">
+                {t.navigation.inicio}
+              </button>
+              <button onClick={() => scrollToSection('demonstracao')} className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors whitespace-nowrap min-w-[120px] text-center">
+                {t.navigation.demonstracao}
+              </button>
+              <button onClick={() => navigate('/calculadora-roi')} className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors whitespace-nowrap min-w-[120px] text-center">
+                {t.navigation.calculadora}
+              </button>
+              <LanguageSelector />
+              <a href="https://calendly.com/frontera-ai-info/45min" target="_blank" rel="noopener noreferrer" className="btn-hero text-sm px-4 py-2 inline-block whitespace-nowrap">
+                {t.navigation.agendarDemo}
+              </a>
+            </div>
           </div>
 
           {/* Mobile Menu Button */}
