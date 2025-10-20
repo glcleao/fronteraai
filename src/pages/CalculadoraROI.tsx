@@ -70,7 +70,7 @@ const CalculadoraROI = () => {
     setTimeout(() => {
       const element = document.getElementById('resultados');
       if (element) {
-        element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        element.scrollIntoView({ behavior: 'smooth', block: 'center' });
       }
     }, 100);
   };
