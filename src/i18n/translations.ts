@@ -92,8 +92,8 @@ export const translations: Record<Language, Translations> = {
       agendarDemo: 'Agendar Demonstração Gratuita',
     },
     hero: {
-      title: 'Os leads não desaparecem.',
-      titleHighlight: 'Apenas deixam de ouvir.',
+      title: 'Leads frios',
+      titleHighlight: 'não são leads perdidos.',
       titleEnd: '',
       subtitle: 'A nossa IA volta a abrir conversas por SMS e recupera oportunidades esquecidas.',
       cta: 'Agendar Demonstração',
@@ -230,8 +230,8 @@ export const translations: Record<Language, Translations> = {
       agendarDemo: 'Agendar Demostración Gratuita',
     },
     hero: {
-      title: 'Los leads no desaparecen.',
-      titleHighlight: 'Solo dejan de escuchar.',
+      title: 'Los leads fríos',
+      titleHighlight: 'no son leads perdidos.',
       titleEnd: '',
       subtitle: 'Nuestra IA vuelve a abrir conversaciones por SMS y recupera oportunidades olvidadas.',
       cta: 'Agendar Demostración',
@@ -368,8 +368,8 @@ export const translations: Record<Language, Translations> = {
       agendarDemo: 'Schedule Free Demo',
     },
     hero: {
-      title: 'Leads don\'t disappear.',
-      titleHighlight: 'They just stop listening.',
+      title: 'Cold leads',
+      titleHighlight: 'are not lost leads.',
       titleEnd: '',
       subtitle: 'Our AI reopens conversations via SMS and recovers forgotten opportunities.',
       cta: 'Schedule Demo',
