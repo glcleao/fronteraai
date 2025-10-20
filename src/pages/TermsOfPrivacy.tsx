@@ -7,6 +7,7 @@ const TermsOfPrivacy = () => {
   const { language } = useLanguage();
 
   useEffect(() => {
+    window.scrollTo(0, 0);
     const titles = {
       pt: 'Termos de Privacidade | frontera',
       es: 'Términos de Privacidad | frontera',
