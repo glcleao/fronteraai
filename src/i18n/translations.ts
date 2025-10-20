@@ -92,10 +92,10 @@ export const translations: Record<Language, Translations> = {
       agendarDemo: 'Agendar Demonstração Gratuita',
     },
     hero: {
-      title: 'Leads frios',
-      titleHighlight: 'não são leads perdidos.',
-      titleEnd: '',
-      subtitle: 'A nossa IA volta a abrir conversas por SMS e recupera oportunidades esquecidas.',
+      title: 'Transforme',
+      titleHighlight: 'Leads Antigos',
+      titleEnd: 'em Vendas Reais',
+      subtitle: 'A nossa IA personalizada contacta automaticamente os seus leads esquecidos por SMS e converte-os em vendas.',
       cta: 'Agendar Demonstração',
       noCommitment: 'Sem compromisso',
       stats: {
@@ -230,10 +230,10 @@ export const translations: Record<Language, Translations> = {
       agendarDemo: 'Agendar Demostración Gratuita',
     },
     hero: {
-      title: 'Los leads fríos',
-      titleHighlight: 'no son leads perdidos.',
-      titleEnd: '',
-      subtitle: 'Nuestra IA vuelve a abrir conversaciones por SMS y recupera oportunidades olvidadas.',
+      title: 'Transforme',
+      titleHighlight: 'Leads Antiguos',
+      titleEnd: 'en Ventas Reales',
+      subtitle: 'Nuestra IA personalizada contacta automáticamente a tus leads olvidados por SMS y los convierte en ventas.',
       cta: 'Agendar Demostración',
       noCommitment: 'Sin compromiso',
       stats: {
@@ -368,10 +368,10 @@ export const translations: Record<Language, Translations> = {
       agendarDemo: 'Schedule Free Demo',
     },
     hero: {
-      title: 'Cold leads',
-      titleHighlight: 'are not lost leads.',
-      titleEnd: '',
-      subtitle: 'Our AI reopens conversations via SMS and recovers forgotten opportunities.',
+      title: 'Transform',
+      titleHighlight: 'Old Leads',
+      titleEnd: 'into Real Sales',
+      subtitle: 'Our personalized AI automatically contacts your forgotten leads via SMS and converts them into sales.',
       cta: 'Schedule Demo',
       noCommitment: 'No commitment',
       stats: {
