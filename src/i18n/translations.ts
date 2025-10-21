@@ -5,6 +5,7 @@ export interface Translations {
     inicio: string;
     calculadora: string;
     demonstracao: string;
+    sobre: string;
     agendarDemo: string;
   };
   hero: {
@@ -81,6 +82,17 @@ export interface Translations {
     copyright: string;
     privacy: string;
   };
+  about: {
+    title: string;
+    subtitle: string;
+    foundersTitle: string;
+    founders: Array<{
+      name: string;
+      role: string;
+    }>;
+    missionTitle: string;
+    missionText: string;
+  };
 }
 
 export const translations: Record<Language, Translations> = {
@@ -89,6 +101,7 @@ export const translations: Record<Language, Translations> = {
       inicio: 'Início',
       calculadora: 'Calculadora',
       demonstracao: 'Demonstração',
+      sobre: 'Sobre nós',
       agendarDemo: 'Agendar Demonstração Gratuita',
     },
     hero: {
@@ -221,12 +234,25 @@ export const translations: Record<Language, Translations> = {
       copyright: 'Todos os direitos reservados',
       privacy: 'Termos de Privacidade',
     },
+    about: {
+      title: 'Sobre a Frontera',
+      subtitle: 'Tecnologia portuguesa de reativação de leads com IA aplicada a vendas B2C.',
+      foundersTitle: 'Fundadores',
+      founders: [
+        { name: 'Gonçalo', role: 'CEO' },
+        { name: 'José', role: 'CTO' },
+        { name: 'Guilherme', role: 'COO' },
+      ],
+      missionTitle: 'Missão',
+      missionText: 'A nossa missão é eliminar o desperdício de leads através de inteligência artificial prática e ética, que entende o comportamento humano e reativa contactos esquecidos com contexto e precisão.',
+    },
   },
   es: {
     navigation: {
       inicio: 'Inicio',
       calculadora: 'Calculadora',
       demonstracao: 'Demostración',
+      sobre: 'Sobre nosotros',
       agendarDemo: 'Agendar Demostración Gratuita',
     },
     hero: {
@@ -359,12 +385,25 @@ export const translations: Record<Language, Translations> = {
       copyright: 'Todos los derechos reservados',
       privacy: 'Términos de Privacidad',
     },
+    about: {
+      title: 'Sobre Frontera',
+      subtitle: 'Tecnología portuguesa de reactivación de leads con IA aplicada a ventas B2C.',
+      foundersTitle: 'Fundadores',
+      founders: [
+        { name: 'Gonçalo', role: 'CEO' },
+        { name: 'José', role: 'CTO' },
+        { name: 'Guilherme', role: 'COO' },
+      ],
+      missionTitle: 'Misión',
+      missionText: 'Nuestra misión es eliminar el desperdicio de leads a través de inteligencia artificial práctica y ética, que entiende el comportamiento humano y reactiva contactos olvidados con contexto y precisión.',
+    },
   },
   en: {
     navigation: {
       inicio: 'Home',
       calculadora: 'Calculator',
       demonstracao: 'Demo',
+      sobre: 'About us',
       agendarDemo: 'Schedule Free Demo',
     },
     hero: {
@@ -496,6 +535,18 @@ export const translations: Record<Language, Translations> = {
     footer: {
       copyright: 'All rights reserved',
       privacy: 'Privacy Terms',
+    },
+    about: {
+      title: 'About Frontera',
+      subtitle: 'Portuguese technology for lead reactivation with AI applied to B2C sales.',
+      foundersTitle: 'Founders',
+      founders: [
+        { name: 'Gonçalo', role: 'CEO' },
+        { name: 'José', role: 'CTO' },
+        { name: 'Guilherme', role: 'COO' },
+      ],
+      missionTitle: 'Mission',
+      missionText: 'Our mission is to eliminate lead waste through practical and ethical artificial intelligence that understands human behavior and reactivates forgotten contacts with context and precision.',
     },
   },
 };

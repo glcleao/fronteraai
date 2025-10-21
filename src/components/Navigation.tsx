@@ -49,6 +49,9 @@ const Navigation = () => {
               <button onClick={() => navigate('/calculadora-roi')} className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors whitespace-nowrap min-w-[120px] text-center">
                 {t.navigation.calculadora}
               </button>
+              <button onClick={() => navigate('/about')} className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors whitespace-nowrap min-w-[120px] text-center">
+                {t.navigation.sobre}
+              </button>
               <LanguageSelector />
               <a href="https://calendly.com/frontera-ai-info/45min" target="_blank" rel="noopener noreferrer" className="btn-hero text-sm px-4 py-2 inline-block whitespace-nowrap">
                 {t.navigation.agendarDemo}
@@ -80,6 +83,12 @@ const Navigation = () => {
               setIsMenuOpen(false);
             }} className="block w-full text-left px-4 py-2 text-sm font-medium text-muted-foreground hover:text-foreground transition-colors">
               {t.navigation.calculadora}
+            </button>
+            <button onClick={() => {
+              navigate('/about');
+              setIsMenuOpen(false);
+            }} className="block w-full text-left px-4 py-2 text-sm font-medium text-muted-foreground hover:text-foreground transition-colors">
+              {t.navigation.sobre}
             </button>
             <a href="https://calendly.com/frontera-ai-info/45min" target="_blank" rel="noopener noreferrer" className="w-full btn-hero text-sm mt-4 inline-block text-center">
               {t.navigation.agendarDemo}

@@ -14,6 +14,7 @@ export const LanguageProvider = ({ children }: { children: ReactNode }) => {
     const saved = localStorage.getItem('language');
     return (saved as Language) || 'pt';
   });
+  const [isTransitioning, setIsTransitioning] = useState(false);
 
   useEffect(() => {
     localStorage.setItem('language', language);
@@ -21,7 +22,20 @@ export const LanguageProvider = ({ children }: { children: ReactNode }) => {
   }, [language]);
 
   const setLanguage = (lang: Language) => {
-    setLanguageState(lang);
+    if (lang === language) return;
+    
+    // Start fade-out
+    setIsTransitioning(true);
+    
+    // Change language after fade-out
+    setTimeout(() => {
+      setLanguageState(lang);
+      
+      // Start fade-in
+      setTimeout(() => {
+        setIsTransitioning(false);
+      }, 150);
+    }, 150);
   };
 
   const value = {
@@ -30,7 +44,13 @@ export const LanguageProvider = ({ children }: { children: ReactNode }) => {
     t: translations[language] || translations["pt"],
   };
 
-  return <LanguageContext.Provider value={value}>{children}</LanguageContext.Provider>;
+  return (
+    <LanguageContext.Provider value={value}>
+      <div className={`transition-opacity duration-150 ${isTransitioning ? 'opacity-0' : 'opacity-100'}`}>
+        {children}
+      </div>
+    </LanguageContext.Provider>
+  );
 };
 
 export const useLanguage = () => {
