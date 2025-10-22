@@ -183,7 +183,7 @@ const CalculadoraROI = () => {
                     </div>
                   </div>
 
-                  <Button type="submit" size="lg" className="w-full">
+                  <Button type="submit" size="lg" className="w-full sm:w-auto mx-auto justify-center">
                     {t.calculator.form.submit}
                   </Button>
                 </form>
@@ -259,7 +259,7 @@ const CalculadoraROI = () => {
                         href="https://calendly.com/frontera-ai-info/45min"
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="btn-hero inline-block"
+                        className="btn-hero inline-flex justify-center mx-auto"
                       >
                         {t.calculator.results.ctaButton}
                       </a>

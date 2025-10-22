@@ -2,10 +2,11 @@ import { useEffect } from 'react';
 import { useLanguage } from '@/contexts/LanguageContext';
 import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
-import { Linkedin } from 'lucide-react';
+import { Linkedin, Target, Rocket, ShieldCheck, TrendingUp } from 'lucide-react';
 import goncaloImg from '@/assets/goncalo.png';
 import joseImg from '@/assets/jose.jpg';
 import guilhermeImg from '@/assets/guilherme.jpg';
+import fronteraImage from '@/assets/frontera-logo.png';
 
 const About = () => {
   const { language, t } = useLanguage();
@@ -82,13 +83,55 @@ const About = () => {
         </div>
       </section>
 
+      {/* Our Story Section */}
+      <section className="py-16 px-6">
+        <div className="container mx-auto max-w-6xl">
+          <h2 className="text-3xl md:text-4xl font-bold mb-10 text-center">
+            {t.about.storyTitle}
+          </h2>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
+            <div className="relative">
+              <div className="absolute -inset-2 rounded-2xl bg-gradient-to-br from-primary/20 to-accent/20 blur-2xl" aria-hidden="true" />
+              <div className="relative rounded-2xl overflow-hidden border border-border shadow-card">
+                <img src={fronteraImage} alt={t.about.storyImageAlt} loading="lazy" className="w-full h-full object-cover aspect-video" />
+              </div>
+            </div>
+            <article className="space-y-4">
+              <p className="text-lg md:text-xl leading-relaxed text-muted-foreground">
+                {t.about.storyLead}
+              </p>
+
+              <div className="grid sm:grid-cols-2 gap-4 mt-6">
+                {t.about.highlights.map((item, i) => (
+                  <div key={item.title} className="bg-card border border-border rounded-xl p-4 flex items-start gap-3">
+                    {i === 0 ? (
+                      <Target className="w-5 h-5 text-primary mt-1" />
+                    ) : i === 1 ? (
+                      <ShieldCheck className="w-5 h-5 text-primary mt-1" />
+                    ) : i === 2 ? (
+                      <Rocket className="w-5 h-5 text-primary mt-1" />
+                    ) : (
+                      <TrendingUp className="w-5 h-5 text-primary mt-1" />
+                    )}
+                    <div>
+                      <h4 className="font-semibold">{item.title}</h4>
+                      <p className="text-sm text-muted-foreground">{item.desc}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
       {/* Mission Section */}
       <section className="py-16 px-6">
         <div className="container mx-auto max-w-4xl">
           <h2 className="text-3xl md:text-4xl font-bold mb-8 text-center">
             {t.about.missionTitle}
           </h2>
-          
           <div className="bg-card border border-border rounded-lg p-8 md:p-12">
             <p className="text-lg md:text-xl leading-relaxed text-muted-foreground">
               {t.about.missionText}

@@ -86,10 +86,12 @@ export interface Translations {
     title: string;
     subtitle: string;
     foundersTitle: string;
-    founders: Array<{
-      name: string;
-      role: string;
-    }>;
+    founders: Array<{ name: string; role: string }>;
+    storyTitle: string;
+    storyLead: string;
+    storyImageAlt: string;
+    highlightsTitle: string;
+    highlights: Array<{ title: string; desc: string }>;
     missionTitle: string;
     missionText: string;
   };
@@ -243,6 +245,16 @@ export const translations: Record<Language, Translations> = {
         { name: 'José', role: 'CTO' },
         { name: 'Guilherme', role: 'COO' },
       ],
+      storyTitle: 'A nossa história',
+      storyLead: 'A Frontera nasce da frustração de ver milhares de leads esquecidas em CRMs. Construímos uma IA que reabre conversas com contexto humano, para que equipas comerciais convertam o que já conquistaram.',
+      storyImageAlt: 'Equipa Frontera a trabalhar com clientes',
+      highlightsTitle: 'O que nos guia',
+      highlights: [
+        { title: 'Performance-first', desc: 'Modelo baseado em resultados: ganhamos quando você ganha.' },
+        { title: 'Privacidade e Ética', desc: 'Contactos com consentimento e respeito pelo utilizador.' },
+        { title: 'Tecnologia Portuguesa', desc: 'Orgulhosamente construída em Portugal para o mundo.' },
+        { title: 'Implementação Rápida', desc: 'Integração em dias, não meses.' },
+      ],
       missionTitle: 'Missão',
       missionText: 'A nossa missão é eliminar o desperdício de leads através de inteligência artificial prática e ética, que entende o comportamento humano e reativa contactos esquecidos com contexto e precisão.',
     },
@@ -394,6 +406,16 @@ export const translations: Record<Language, Translations> = {
         { name: 'José', role: 'CTO' },
         { name: 'Guilherme', role: 'COO' },
       ],
+      storyTitle: 'Nuestra historia',
+      storyLead: 'Frontera nace de la frustración de ver miles de leads olvidados en CRMs. Construimos una IA que reabre conversaciones con contexto humano para que los equipos comerciales conviertan lo que ya conquistaron.',
+      storyImageAlt: 'Equipo de Frontera trabajando con clientes',
+      highlightsTitle: 'Lo que nos guía',
+      highlights: [
+        { title: 'Performance-first', desc: 'Modelo basado en resultados: ganamos cuando tú ganas.' },
+        { title: 'Privacidad y Ética', desc: 'Contactos con consentimiento y respeto al usuario.' },
+        { title: 'Tecnología Portuguesa', desc: 'Orgullosamente construida en Portugal para el mundo.' },
+        { title: 'Implementación Rápida', desc: 'Integración en días, no meses.' },
+      ],
       missionTitle: 'Misión',
       missionText: 'Nuestra misión es eliminar el desperdicio de leads a través de inteligencia artificial práctica y ética, que entiende el comportamiento humano y reactiva contactos olvidados con contexto y precisión.',
     },
@@ -544,6 +566,16 @@ export const translations: Record<Language, Translations> = {
         { name: 'Gonçalo', role: 'CEO' },
         { name: 'José', role: 'CTO' },
         { name: 'Guilherme', role: 'COO' },
+      ],
+      storyTitle: 'Our story',
+      storyLead: 'Frontera was born from the frustration of seeing thousands of leads forgotten in CRMs. We built an AI that reopens conversations with human context so sales teams can convert what they already earned.',
+      storyImageAlt: 'Frontera team working with customers',
+      highlightsTitle: 'What drives us',
+      highlights: [
+        { title: 'Performance-first', desc: 'Results-based model: we win when you win.' },
+        { title: 'Privacy & Ethics', desc: 'Consent-based outreach with user respect.' },
+        { title: 'Portuguese Tech', desc: 'Proudly built in Portugal for the world.' },
+        { title: 'Fast Implementation', desc: 'Integrate in days, not months.' },
       ],
       missionTitle: 'Mission',
       missionText: 'Our mission is to eliminate lead waste through practical and ethical artificial intelligence that understands human behavior and reactivates forgotten contacts with context and precision.',
