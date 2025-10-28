@@ -19,12 +19,13 @@ const App = () => (
         <Toaster />
         <Sonner />
         <BrowserRouter>
+          import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
           <Routes>
             <Route path="/" element={<Index />} />
             <Route path="/terms-of-privacy" element={<TermsOfPrivacy />} />
             <Route path="/calculator" element={<CalculadoraROI />} />
             <Route path="/about" element={<About />} />
-            {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
+            <Route path="/calculadora-roi" element={<Navigate to="/calculator" replace />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </BrowserRouter>
