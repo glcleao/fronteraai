@@ -258,7 +258,7 @@ export const translations: Record<Language, Translations> = {
           chapter: 'Capítulo Um',
           title: 'Conceção da Ideia',
           description: 'Identificámos que milhares de leads ficavam esquecidos nas bases de dados das empresas. Nasceu a visão de usar IA para reativar estas oportunidades perdidas.',
-          year: '2024'
+          year: '2023'
         },
         {
           chapter: 'Capítulo Dois',
@@ -270,13 +270,13 @@ export const translations: Record<Language, Translations> = {
           chapter: 'Capítulo Três',
           title: 'Entrada no Mercado',
           description: 'Lançámos a Frontera no mercado português, ajudando empresas B2C a recuperar receita de leads esquecidos com resultados comprovados.',
-          year: '2024'
+          year: '2025'
         },
         {
           chapter: 'Capítulo Quatro',
           title: 'Expansão Internacional',
           description: 'O nosso objetivo é expandir para mercados internacionais, levando a nossa tecnologia de reativação de leads a empresas em toda a Europa e além.',
-          year: '2025'
+          year: '2026'
         }
       ],
     },
@@ -436,7 +436,7 @@ export const translations: Record<Language, Translations> = {
           chapter: 'Capítulo Uno',
           title: 'Concepción de la Idea',
           description: 'Identificamos que miles de leads quedaban olvidados en las bases de datos de las empresas. Nació la visión de usar IA para reactivar estas oportunidades perdidas.',
-          year: '2024'
+          year: '2023'
         },
         {
           chapter: 'Capítulo Dos',
@@ -448,13 +448,13 @@ export const translations: Record<Language, Translations> = {
           chapter: 'Capítulo Tres',
           title: 'Entrada al Mercado',
           description: 'Lanzamos Frontera en el mercado portugués, ayudando a empresas B2C a recuperar ingresos de leads olvidados con resultados comprobados.',
-          year: '2024'
+          year: '2025'
         },
         {
           chapter: 'Capítulo Cuatro',
           title: 'Expansión Internacional',
           description: 'Nuestro objetivo es expandirnos a mercados internacionales, llevando nuestra tecnología de reactivación de leads a empresas en toda Europa y más allá.',
-          year: '2025'
+          year: '2026'
         }
       ],
     },
@@ -614,7 +614,7 @@ export const translations: Record<Language, Translations> = {
           chapter: 'Chapter One',
           title: 'Idea Conception',
           description: 'We identified that thousands of leads were being forgotten in company databases. The vision was born to use AI to reactivate these lost opportunities.',
-          year: '2024'
+          year: '2023'
         },
         {
           chapter: 'Chapter Two',
@@ -626,13 +626,13 @@ export const translations: Record<Language, Translations> = {
           chapter: 'Chapter Three',
           title: 'Market Entry',
           description: 'We launched Frontera in the Portuguese market, helping B2C companies recover revenue from forgotten leads with proven results.',
-          year: '2024'
+          year: '2025'
         },
         {
           chapter: 'Chapter Four',
           title: 'International Expansion',
           description: 'Our goal is to expand to international markets, bringing our lead reactivation technology to companies across Europe and beyond.',
-          year: '2025'
+          year: '2026'
         }
       ],
     },

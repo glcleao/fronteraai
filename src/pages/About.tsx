@@ -83,6 +83,21 @@ const About = () => {
         </div>
       </section>
 
+      {/* Mission Section */}
+      <section className="py-16 px-6 bg-muted/30">
+        <div className="container mx-auto max-w-4xl">
+          <h2 className="text-3xl md:text-4xl font-bold mb-8 text-center">
+            {t.about.missionTitle}
+          </h2>
+          
+          <div className="bg-card border border-border rounded-lg p-8 md:p-12">
+            <p className="text-lg md:text-xl leading-relaxed text-muted-foreground">
+              {t.about.missionText}
+            </p>
+          </div>
+        </div>
+      </section>
+
       {/* Journey Timeline Section */}
       <section className="py-16 px-6">
         <div className="container mx-auto max-w-5xl">
@@ -186,21 +201,6 @@ const About = () => {
                 </div>
               );
             })}
-          </div>
-        </div>
-      </section>
-
-      {/* Mission Section */}
-      <section className="py-16 px-6 bg-muted/30">
-        <div className="container mx-auto max-w-4xl">
-          <h2 className="text-3xl md:text-4xl font-bold mb-8 text-center">
-            {t.about.missionTitle}
-          </h2>
-          
-          <div className="bg-card border border-border rounded-lg p-8 md:p-12">
-            <p className="text-lg md:text-xl leading-relaxed text-muted-foreground">
-              {t.about.missionText}
-            </p>
           </div>
         </div>
       </section>
