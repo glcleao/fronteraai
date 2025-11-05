@@ -92,6 +92,13 @@ export interface Translations {
     }>;
     missionTitle: string;
     missionText: string;
+    journeyTitle: string;
+    milestones: Array<{
+      chapter: string;
+      title: string;
+      description: string;
+      year: string;
+    }>;
   };
 }
 
@@ -245,6 +252,33 @@ export const translations: Record<Language, Translations> = {
       ],
       missionTitle: 'Missão',
       missionText: 'A nossa missão é eliminar o desperdício de leads através de inteligência artificial prática e ética, que entende o comportamento humano e reativa contactos esquecidos com contexto e precisão.',
+      journeyTitle: 'A Nossa Jornada',
+      milestones: [
+        {
+          chapter: 'Capítulo Um',
+          title: 'Conceção da Ideia',
+          description: 'Identificámos que milhares de leads ficavam esquecidos nas bases de dados das empresas. Nasceu a visão de usar IA para reativar estas oportunidades perdidas.',
+          year: '2024'
+        },
+        {
+          chapter: 'Capítulo Dois',
+          title: 'Desenvolvimento da Tecnologia',
+          description: 'Desenvolvemos uma tecnologia de IA conversacional capaz de entender contexto, personalizar mensagens e reabrir conversas de forma natural e humana.',
+          year: '2024'
+        },
+        {
+          chapter: 'Capítulo Três',
+          title: 'Entrada no Mercado',
+          description: 'Lançámos a Frontera no mercado português, ajudando empresas B2C a recuperar receita de leads esquecidos com resultados comprovados.',
+          year: '2024'
+        },
+        {
+          chapter: 'Capítulo Quatro',
+          title: 'Expansão Internacional',
+          description: 'O nosso objetivo é expandir para mercados internacionais, levando a nossa tecnologia de reativação de leads a empresas em toda a Europa e além.',
+          year: '2025'
+        }
+      ],
     },
   },
   es: {
@@ -396,6 +430,33 @@ export const translations: Record<Language, Translations> = {
       ],
       missionTitle: 'Misión',
       missionText: 'Nuestra misión es eliminar el desperdicio de leads a través de inteligencia artificial práctica y ética, que entiende el comportamiento humano y reactiva contactos olvidados con contexto y precisión.',
+      journeyTitle: 'Nuestro Viaje',
+      milestones: [
+        {
+          chapter: 'Capítulo Uno',
+          title: 'Concepción de la Idea',
+          description: 'Identificamos que miles de leads quedaban olvidados en las bases de datos de las empresas. Nació la visión de usar IA para reactivar estas oportunidades perdidas.',
+          year: '2024'
+        },
+        {
+          chapter: 'Capítulo Dos',
+          title: 'Desarrollo de la Tecnología',
+          description: 'Desarrollamos una tecnología de IA conversacional capaz de entender contexto, personalizar mensajes y reabrir conversaciones de forma natural y humana.',
+          year: '2024'
+        },
+        {
+          chapter: 'Capítulo Tres',
+          title: 'Entrada al Mercado',
+          description: 'Lanzamos Frontera en el mercado portugués, ayudando a empresas B2C a recuperar ingresos de leads olvidados con resultados comprobados.',
+          year: '2024'
+        },
+        {
+          chapter: 'Capítulo Cuatro',
+          title: 'Expansión Internacional',
+          description: 'Nuestro objetivo es expandirnos a mercados internacionales, llevando nuestra tecnología de reactivación de leads a empresas en toda Europa y más allá.',
+          year: '2025'
+        }
+      ],
     },
   },
   en: {
@@ -547,6 +608,33 @@ export const translations: Record<Language, Translations> = {
       ],
       missionTitle: 'Mission',
       missionText: 'Our mission is to eliminate lead waste through practical and ethical artificial intelligence that understands human behavior and reactivates forgotten contacts with context and precision.',
+      journeyTitle: 'Our Journey',
+      milestones: [
+        {
+          chapter: 'Chapter One',
+          title: 'Idea Conception',
+          description: 'We identified that thousands of leads were being forgotten in company databases. The vision was born to use AI to reactivate these lost opportunities.',
+          year: '2024'
+        },
+        {
+          chapter: 'Chapter Two',
+          title: 'Technology Development',
+          description: 'We developed conversational AI technology capable of understanding context, personalizing messages, and reopening conversations in a natural and human way.',
+          year: '2024'
+        },
+        {
+          chapter: 'Chapter Three',
+          title: 'Market Entry',
+          description: 'We launched Frontera in the Portuguese market, helping B2C companies recover revenue from forgotten leads with proven results.',
+          year: '2024'
+        },
+        {
+          chapter: 'Chapter Four',
+          title: 'International Expansion',
+          description: 'Our goal is to expand to international markets, bringing our lead reactivation technology to companies across Europe and beyond.',
+          year: '2025'
+        }
+      ],
     },
   },
 };

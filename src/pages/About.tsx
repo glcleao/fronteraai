@@ -6,6 +6,7 @@ import { Linkedin } from 'lucide-react';
 import goncaloImg from '@/assets/goncalo.png';
 import joseImg from '@/assets/jose.jpg';
 import guilhermeImg from '@/assets/guilherme.jpg';
+import fronteraSymbol from '@/assets/frontera-symbol.png';
 
 const About = () => {
   const { language, t } = useLanguage();
@@ -82,8 +83,115 @@ const About = () => {
         </div>
       </section>
 
-      {/* Mission Section */}
+      {/* Journey Timeline Section */}
       <section className="py-16 px-6">
+        <div className="container mx-auto max-w-5xl">
+          <h2 className="text-3xl md:text-4xl font-bold mb-16 text-center">
+            {t.about.journeyTitle}
+          </h2>
+          
+          {/* Timeline */}
+          <div className="relative">
+            {/* Vertical line - hidden on mobile, shown on md+ */}
+            <div className="hidden md:block absolute left-1/2 transform -translate-x-1/2 h-full w-0.5 bg-primary/20" />
+            
+            {/* Mobile vertical line - left side */}
+            <div className="md:hidden absolute left-6 top-0 h-full w-0.5 bg-primary/20" />
+            
+            {t.about.milestones.map((milestone, index) => {
+              const isMarketEntry = index === 2; // Third milestone (Entrada no Mercado)
+              const isLeft = index % 2 === 0;
+              
+              return (
+                <div 
+                  key={milestone.chapter}
+                  className="relative mb-16 last:mb-0 animate-fade-in"
+                  style={{ animationDelay: `${index * 150}ms` }}
+                >
+                  {/* Desktop Layout */}
+                  <div className="hidden md:flex items-center">
+                    {/* Left side content (even indices) */}
+                    {isLeft ? (
+                      <>
+                        <div className="w-1/2 pr-12 text-right">
+                          <span className="text-sm font-semibold text-primary mb-1 block">
+                            {milestone.chapter}
+                          </span>
+                          <h3 className="text-2xl font-bold mb-2">{milestone.title}</h3>
+                          <p className="text-muted-foreground leading-relaxed">{milestone.description}</p>
+                        </div>
+                        
+                        {/* Center marker */}
+                        <div className="relative z-10 flex items-center justify-center">
+                          {isMarketEntry ? (
+                            <div className="w-16 h-16 rounded-full bg-primary flex items-center justify-center shadow-lg animate-pulse">
+                              <img src={fronteraSymbol} alt="Frontera" className="w-10 h-10" />
+                            </div>
+                          ) : (
+                            <div className="w-4 h-4 rounded-full bg-primary border-4 border-background shadow-lg" />
+                          )}
+                        </div>
+                        
+                        <div className="w-1/2 pl-12">
+                          <span className="text-3xl font-bold text-primary/30">{milestone.year}</span>
+                        </div>
+                      </>
+                    ) : (
+                      <>
+                        <div className="w-1/2 pr-12 text-right">
+                          <span className="text-3xl font-bold text-primary/30">{milestone.year}</span>
+                        </div>
+                        
+                        {/* Center marker */}
+                        <div className="relative z-10 flex items-center justify-center">
+                          <div className="w-4 h-4 rounded-full bg-primary border-4 border-background shadow-lg" />
+                        </div>
+                        
+                        <div className="w-1/2 pl-12">
+                          <span className="text-sm font-semibold text-primary mb-1 block">
+                            {milestone.chapter}
+                          </span>
+                          <h3 className="text-2xl font-bold mb-2">{milestone.title}</h3>
+                          <p className="text-muted-foreground leading-relaxed">{milestone.description}</p>
+                        </div>
+                      </>
+                    )}
+                  </div>
+                  
+                  {/* Mobile Layout */}
+                  <div className="md:hidden flex items-start">
+                    {/* Left marker */}
+                    <div className="relative z-10 flex items-center justify-center mr-6">
+                      {isMarketEntry ? (
+                        <div className="w-12 h-12 rounded-full bg-primary flex items-center justify-center shadow-lg">
+                          <img src={fronteraSymbol} alt="Frontera" className="w-7 h-7" />
+                        </div>
+                      ) : (
+                        <div className="w-3 h-3 rounded-full bg-primary border-4 border-background shadow-lg" />
+                      )}
+                    </div>
+                    
+                    {/* Content */}
+                    <div className="flex-1 pb-8">
+                      <div className="flex items-center gap-3 mb-2">
+                        <span className="text-sm font-semibold text-primary">
+                          {milestone.chapter}
+                        </span>
+                        <span className="text-sm font-bold text-primary/40">{milestone.year}</span>
+                      </div>
+                      <h3 className="text-xl font-bold mb-2">{milestone.title}</h3>
+                      <p className="text-muted-foreground text-sm leading-relaxed">{milestone.description}</p>
+                    </div>
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+
+      {/* Mission Section */}
+      <section className="py-16 px-6 bg-muted/30">
         <div className="container mx-auto max-w-4xl">
           <h2 className="text-3xl md:text-4xl font-bold mb-8 text-center">
             {t.about.missionTitle}
