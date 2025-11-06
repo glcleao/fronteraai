@@ -120,7 +120,7 @@ export const translations: Record<Language, Translations> = {
       noCommitment: 'Sem compromisso',
       stats: {
         responseRate: 'Taxa de Resposta',
-        responseValue: '5%',
+        responseValue: '~25%',
         noRisk: 'Sem Risco',
         performanceBased: 'Performance-based',
         implementation: 'Implementação',
@@ -298,7 +298,7 @@ export const translations: Record<Language, Translations> = {
       noCommitment: 'Sin compromiso',
       stats: {
         responseRate: 'Tasa de Respuesta',
-        responseValue: '5%',
+        responseValue: '~25%',
         noRisk: 'Sin Riesgo',
         performanceBased: 'Basado en resultados',
         implementation: 'Implementación',
@@ -476,7 +476,7 @@ export const translations: Record<Language, Translations> = {
       noCommitment: 'No commitment',
       stats: {
         responseRate: 'Response Rate',
-        responseValue: '5%',
+        responseValue: '~25%',
         noRisk: 'No Risk',
         performanceBased: 'Performance-based',
         implementation: 'Implementation',
