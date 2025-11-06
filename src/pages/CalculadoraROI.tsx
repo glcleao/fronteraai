@@ -52,7 +52,7 @@ const CalculadoraROI = () => {
       return;
     }
 
-    const taxaConversao = 0.05; // 5%
+    const taxaConversao = 0.25; // ~25%
     const diasParaProcessar = leadsNaoContactadas / leadsProcessadasPorDia;
     const leadsPerdidasPorDia = leadsNaoContactadas / periodoEmDias;
     const vendasPerdidasPorDia = leadsPerdidasPorDia * taxaConversao;
@@ -224,7 +224,7 @@ const CalculadoraROI = () => {
                   <Card className="card-premium">
                     <CardHeader>
                       <CardTitle className="text-lg">{t.calculator.results.salesPerDay}</CardTitle>
-                      <CardDescription>{language === 'pt' ? 'Com taxa de conversão de 5%' : language === 'es' ? 'Con tasa de conversión del 5%' : 'With 5% conversion rate'}</CardDescription>
+                      <CardDescription>{language === 'pt' ? 'Com taxa de conversão de ~25%' : language === 'es' ? 'Con tasa de conversión del ~25%' : 'With ~25% conversion rate'}</CardDescription>
                     </CardHeader>
                     <CardContent>
                       <div className="text-4xl font-bold text-gradient">
